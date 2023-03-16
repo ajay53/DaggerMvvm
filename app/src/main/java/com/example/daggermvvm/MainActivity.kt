@@ -1,10 +1,9 @@
 package com.example.daggermvvm
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import com.example.daggermvvm.databinding.ActivityMainBinding
-import dagger.internal.DaggerCollections
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
