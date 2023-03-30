@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import dagger.Module
 
 @Database(entities = [User::class], version = 1, exportSchema = false)
 abstract class DatabaseHandler : RoomDatabase() {
@@ -21,7 +22,8 @@ abstract class DatabaseHandler : RoomDatabase() {
             // if it is, then create the database
             return INSTANCE ?: synchronized(this) {
                 val instance = Room.databaseBuilder(
-                    context.applicationContext,
+                    context,
+//                    context.applicationContext,
                     DatabaseHandler::class.java,
                     "dagger_DB"
                 ).build()

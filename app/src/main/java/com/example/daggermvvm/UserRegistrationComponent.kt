@@ -1,6 +1,5 @@
 package com.example.daggermvvm
 
-import android.content.Context
 import dagger.Component
 import javax.inject.Singleton
 

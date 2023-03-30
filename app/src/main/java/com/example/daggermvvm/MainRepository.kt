@@ -5,7 +5,8 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class MainRepository @Inject constructor(private val userDao: UserDao) {
+class MainRepository @Inject constructor() {
+//class MainRepository @Inject constructor(private val userDao: UserDao) {
 
     companion object {
         private const val TAG = "MainRepository"
@@ -13,6 +14,6 @@ class MainRepository @Inject constructor(private val userDao: UserDao) {
 
     suspend fun insertUser(user: User) {
         Log.d(TAG, "insertUser: $user")
-        userDao.insert(user)
+//        userDao.insert(user)
     }
 }

@@ -22,14 +22,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(binding.root)
 
 
-//        val userRegistrationComponent: UserRegistrationComponent =
-/*
-        val userRegistrationComponent: UserRegistrationComponent =
-            DaggerUserRegistrationComponent
-                .builder().databaseModule(DatabaseModule(applicationContext)).build()
-*/
+        val userRegistrationComponent: UserRegistrationComponent = DaggerUserRegistrationComponent.factory().create()
 
-//        viewModel = userRegistrationComponent.getMainViewModel()
+        /*val userRegistrationComponent: UserRegistrationComponent =
+            DaggerUserRegistrationComponent.create()*/
+
+        viewModel = userRegistrationComponent.getMainViewModel()
 
         binding.btnSave.setOnClickListener(this)
     }
