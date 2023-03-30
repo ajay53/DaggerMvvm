@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.daggermvvm.databinding.ActivityMainBinding
+import dagger.android.DaggerApplication
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -20,9 +21,15 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
+//        val userRegistrationComponent: UserRegistrationComponent =
+/*
         val userRegistrationComponent: UserRegistrationComponent =
-            DaggerUserRegistrationComponent.create()
-        viewModel = userRegistrationComponent.getMainViewModel()
+            DaggerUserRegistrationComponent
+                .builder().databaseModule(DatabaseModule(applicationContext)).build()
+*/
+
+//        viewModel = userRegistrationComponent.getMainViewModel()
 
         binding.btnSave.setOnClickListener(this)
     }
