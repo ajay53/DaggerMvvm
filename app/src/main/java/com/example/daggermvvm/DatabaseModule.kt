@@ -8,13 +8,13 @@ import dagger.Provides
 //class DatabaseModule(private val context: Context) {
 class DatabaseModule {
 
-    @Provides
+    /*@Provides
     fun getCar(): Car {
         return SmallCar()
-    }
-
-    /*@Provides
-    fun provideUserDao(): UserDao {
-        return DatabaseHandler.getDatabase(context).userDao()
     }*/
+
+    @Provides
+    fun provideUserDao(context: Context): UserDao {
+        return DatabaseHandler.getDatabase(context).userDao()
+    }
 }

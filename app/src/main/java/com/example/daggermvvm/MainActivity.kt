@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(binding.root)
 
 
-        val userRegistrationComponent: UserRegistrationComponent = DaggerUserRegistrationComponent.factory().create()
+        val userRegistrationComponent: UserRegistrationComponent = DaggerUserRegistrationComponent.factory().create(applicationContext)
 
         /*val userRegistrationComponent: UserRegistrationComponent =
             DaggerUserRegistrationComponent.create()*/

@@ -18,8 +18,8 @@ class MainViewModel @Inject constructor(private val repository: MainRepository) 
 
     fun insert(user: User) {
         viewModelScope.launch(Dispatchers.IO) {
-            Log.d(TAG, "insert: $user")
-//            repository.insertUser(user)
+//            Log.d(TAG, "insert: $user")
+            repository.insertUser(user)
         }
     }
 }
