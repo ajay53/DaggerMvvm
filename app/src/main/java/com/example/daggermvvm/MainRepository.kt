@@ -1,6 +1,5 @@
 package com.example.daggermvvm
 
-import android.util.Log
 import javax.inject.Inject
 import javax.inject.Singleton
 

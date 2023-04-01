@@ -5,6 +5,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.daggermvvm.databinding.ActivityMainBinding
 import dagger.android.DaggerApplication
+import javax.inject.Inject
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -13,7 +14,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private lateinit var binding: ActivityMainBinding
-    private lateinit var viewModel: MainViewModel
+    @Inject lateinit var viewModel: MainViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,11 +24,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
 
         val userRegistrationComponent: UserRegistrationComponent = DaggerUserRegistrationComponent.factory().create(applicationContext)
-
+        userRegistrationComponent.inject(this)
+//        (applicationContext as MyApp).appComponent.inject(this)
         /*val userRegistrationComponent: UserRegistrationComponent =
             DaggerUserRegistrationComponent.create()*/
 
-        viewModel = userRegistrationComponent.getMainViewModel()
+//        viewModel = userRegistrationComponent.getMainViewModel()
 
         binding.btnSave.setOnClickListener(this)
     }
@@ -35,7 +37,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(p0: View?) {
         when (p0?.id) {
             binding.btnSave.id -> {
-                viewModel.insert(User(0, "T-Rex", "DinoMan"))
+                viewModel.insert(User(5, "T-Rex", "DinoMan"))
             }
         }
     }

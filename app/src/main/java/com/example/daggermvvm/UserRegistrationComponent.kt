@@ -14,8 +14,6 @@ interface UserRegistrationComponent {
         fun create(@BindsInstance context: Context): UserRegistrationComponent
     }
 
-    fun getMainViewModel(): MainViewModel
-//    fun getMainRepository(): MainRepository
-
-
+    fun inject(mainActivity: MainActivity)
+//    fun getMainViewModel(): MainViewModel
 }
