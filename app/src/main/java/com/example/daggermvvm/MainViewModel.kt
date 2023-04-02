@@ -1,15 +1,13 @@
 package com.example.daggermvvm
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 import javax.inject.Singleton
 
-@Singleton
+@CustomScope.ActivityScope
 class MainViewModel @Inject constructor(private val repository: MainRepository) : ViewModel() {
 
     companion object {

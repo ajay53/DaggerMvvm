@@ -2,12 +2,13 @@ package com.example.daggermvvm
 
 import android.app.Application
 
+
 class MyApp : Application() {
 
-//    lateinit var appComponent: UserRegistrationComponent
+    lateinit var appComponent: AppComponent
     override fun onCreate() {
         super.onCreate()
 
-//        appComponent = DaggerUserRegistrationComponent.factory().create(applicationContext)
+        appComponent = DaggerAppComponent.factory().create(applicationContext)
     }
 }

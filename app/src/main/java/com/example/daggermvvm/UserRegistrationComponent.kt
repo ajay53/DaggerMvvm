@@ -5,13 +5,14 @@ import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
 
-@Singleton
-@Component(modules = [DatabaseModule::class])
+//@Component(modules = [DatabaseModule::class])
+@Component(dependencies = [AppComponent::class])
+@CustomScope.ActivityScope
 interface UserRegistrationComponent {
 
     @Component.Factory
     interface Factory {
-        fun create(@BindsInstance context: Context): UserRegistrationComponent
+        fun create(appComponent: AppComponent): UserRegistrationComponent
     }
 
     fun inject(mainActivity: MainActivity)

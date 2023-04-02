@@ -22,10 +22,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
-        val userRegistrationComponent: UserRegistrationComponent = DaggerUserRegistrationComponent.factory().create(applicationContext)
+        val appComponent = (applicationContext as MyApp).appComponent
+        val userRegistrationComponent: UserRegistrationComponent = DaggerUserRegistrationComponent.factory().create(appComponent)
         userRegistrationComponent.inject(this)
-//        (applicationContext as MyApp).appComponent.inject(this)
+
+//
         /*val userRegistrationComponent: UserRegistrationComponent =
             DaggerUserRegistrationComponent.create()*/
 
