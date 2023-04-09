@@ -1,10 +1,14 @@
-package com.example.daggermvvm
+package com.example.daggermvvm.view
 
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import com.example.daggermvvm.DaggerUserRegistrationComponent
+import com.example.daggermvvm.MyApp
+import com.example.daggermvvm.repository.cache.User
+import com.example.daggermvvm.dagger.UserRegistrationComponent
 import com.example.daggermvvm.databinding.ActivityMainBinding
-import dagger.android.DaggerApplication
+import com.example.daggermvvm.viewmodel.MainViewModel
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
@@ -23,7 +27,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(binding.root)
 
         val appComponent = (applicationContext as MyApp).appComponent
-        val userRegistrationComponent: UserRegistrationComponent = DaggerUserRegistrationComponent.factory().create(appComponent)
+        val userRegistrationComponent: UserRegistrationComponent = DaggerUserRegistrationComponent.factory()
+            .create(appComponent)
         userRegistrationComponent.inject(this)
 
 //

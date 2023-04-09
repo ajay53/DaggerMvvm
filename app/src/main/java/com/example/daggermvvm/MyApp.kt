@@ -1,6 +1,7 @@
 package com.example.daggermvvm
 
 import android.app.Application
+import com.example.daggermvvm.dagger.AppComponent
 
 
 class MyApp : Application() {

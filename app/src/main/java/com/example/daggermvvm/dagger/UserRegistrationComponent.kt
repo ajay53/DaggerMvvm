@@ -1,9 +1,7 @@
-package com.example.daggermvvm
+package com.example.daggermvvm.dagger
 
-import android.content.Context
-import dagger.BindsInstance
+import com.example.daggermvvm.view.MainActivity
 import dagger.Component
-import javax.inject.Singleton
 
 //@Component(modules = [DatabaseModule::class])
 @Component(dependencies = [AppComponent::class])

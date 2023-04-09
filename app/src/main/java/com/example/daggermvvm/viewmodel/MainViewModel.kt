@@ -1,11 +1,13 @@
-package com.example.daggermvvm
+package com.example.daggermvvm.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.daggermvvm.dagger.CustomScope
+import com.example.daggermvvm.repository.MainRepository
+import com.example.daggermvvm.repository.cache.User
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
-import javax.inject.Singleton
 
 @CustomScope.ActivityScope
 class MainViewModel @Inject constructor(private val repository: MainRepository) : ViewModel() {

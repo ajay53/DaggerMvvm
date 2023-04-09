@@ -1,6 +1,7 @@
-package com.example.daggermvvm
+package com.example.daggermvvm.dagger
 
 import android.content.Context
+import com.example.daggermvvm.repository.cache.DatabaseModule
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton

@@ -1,4 +1,4 @@
-package com.example.daggermvvm
+package com.example.daggermvvm.repository.cache
 
 import android.content.Context
 import dagger.Module

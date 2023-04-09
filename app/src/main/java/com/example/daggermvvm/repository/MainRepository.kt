@@ -1,8 +1,9 @@
-package com.example.daggermvvm
+package com.example.daggermvvm.repository
 
 import android.util.Log
+import com.example.daggermvvm.dagger.CustomScope
+import com.example.daggermvvm.repository.cache.User
 import javax.inject.Inject
-import javax.inject.Singleton
 
 @CustomScope.ActivityScope
 //@Singleton

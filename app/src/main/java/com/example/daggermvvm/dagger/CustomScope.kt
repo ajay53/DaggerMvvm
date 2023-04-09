@@ -1,4 +1,4 @@
-package com.example.daggermvvm
+package com.example.daggermvvm.dagger
 
 import javax.inject.Scope
 
